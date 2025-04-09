@@ -20,12 +20,14 @@ function App() {
 
       if (bmiValue < 18.5) {
         setBmiStatus("UnderWeight");
-      } else if (bmiValue >= 18.5 && bmiValue < 24.9) {
+      } else if (bmiValue >= 18.5 && bmiValue < 24.99) {
         setBmiStatus("Normal Weight");
-      } else if (bmiValue >= 25 && bmiValue < 29.9) {
+      } else if (bmiValue >= 25.0 && bmiValue < 29.99) {
         setBmiStatus("Overweight");
-      } else {
+      } else if (bmiValue >= 30.0 && bmiValue < 34.99) {
         setBmiStatus("Obese");
+      } else if (bmiValue >= 35.0) {
+        setBmiStatus("Extremely Obese");
       }
       setErrorMessage("");
     } else {
@@ -76,6 +78,7 @@ function App() {
               <p>Status : {bmiStatus}</p>
             </div>
           )}
+
           <p className="copyright">
             Designed by <span>Arvind.R.AR.</span>
           </p>
